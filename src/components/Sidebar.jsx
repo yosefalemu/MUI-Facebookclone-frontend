@@ -17,12 +17,11 @@ import SettingsIcon from "@mui/icons-material/Settings";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 
-const Sidebar = () => {
+const Sidebar = ({ mode, setMode }) => {
   return (
     <Box
-      flex={1}
+      flex={2}
       height="calc(100vh - 64px)"
-      color={"white"}
       padding={2}
       sx={{ display: { xs: "none", lg: "block" } }}
     >
@@ -33,7 +32,7 @@ const Sidebar = () => {
               <ListItemIcon>
                 <HomeIcon />
               </ListItemIcon>
-              <ListItemText primary="Homepage" sx={{ color: "black" }} />
+              <ListItemText primary="Homepage" />
             </ListItemButton>
           </ListItem>
           <ListItem disablePadding>
@@ -41,7 +40,7 @@ const Sidebar = () => {
               <ListItemIcon>
                 <ArticleIcon />
               </ListItemIcon>
-              <ListItemText primary="Pages" sx={{ color: "black" }} />
+              <ListItemText primary="Pages" />
             </ListItemButton>
           </ListItem>
           <ListItem disablePadding>
@@ -49,7 +48,7 @@ const Sidebar = () => {
               <ListItemIcon>
                 <GroupsIcon />
               </ListItemIcon>
-              <ListItemText primary="Groups" sx={{ color: "black" }} />
+              <ListItemText primary="Groups" />
             </ListItemButton>
           </ListItem>
           <ListItem disablePadding>
@@ -57,7 +56,7 @@ const Sidebar = () => {
               <ListItemIcon>
                 <StorefrontIcon />
               </ListItemIcon>
-              <ListItemText primary="Marketplace" sx={{ color: "black" }} />
+              <ListItemText primary="Marketplace" />
             </ListItemButton>
           </ListItem>
           <ListItem disablePadding>
@@ -65,7 +64,7 @@ const Sidebar = () => {
               <ListItemIcon>
                 <Diversity1Icon />
               </ListItemIcon>
-              <ListItemText primary="Friends" sx={{ color: "black" }} />
+              <ListItemText primary="Friends" />
             </ListItemButton>
           </ListItem>
           <ListItem disablePadding>
@@ -73,7 +72,7 @@ const Sidebar = () => {
               <ListItemIcon>
                 <SettingsIcon />
               </ListItemIcon>
-              <ListItemText primary="Settings" sx={{ color: "black" }} />
+              <ListItemText primary="Settings" />
             </ListItemButton>
           </ListItem>
           <ListItem disablePadding>
@@ -81,7 +80,7 @@ const Sidebar = () => {
               <ListItemIcon>
                 <AccountCircleIcon />
               </ListItemIcon>
-              <ListItemText primary="Profile" sx={{ color: "black" }} />
+              <ListItemText primary="Profile" />
             </ListItemButton>
           </ListItem>
           <ListItem disablePadding>
@@ -89,7 +88,9 @@ const Sidebar = () => {
               <ListItemIcon>
                 <DarkModeIcon />
               </ListItemIcon>
-              <Switch />
+              <Switch
+                onChange={(e) => setMode(mode === "light" ? "dark" : "light")}
+              />
             </ListItemButton>
           </ListItem>
         </List>

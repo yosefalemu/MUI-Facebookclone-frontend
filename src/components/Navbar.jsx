@@ -23,9 +23,7 @@ const Navbar = () => {
     justifyContent: "space-between",
   });
   const InputContainer = styled(Box)({
-    backgroundColor: "white",
     padding: "5px 10px",
-    color: "white",
     fontSize: "28px",
     textDecoration: "none",
     borderRadius: "10px",
@@ -59,6 +57,7 @@ const Navbar = () => {
         <Diversity3Icon sx={{ display: { xs: "block", sm: "none" } }} />
         <InputContainer
           sx={{ width: { xs: "50%", sm: "50%", md: "50%", xl: "40%" } }}
+          bgcolor={"background.default"}
         >
           <Input
             placeholder="Search..."
@@ -67,6 +66,7 @@ const Navbar = () => {
                 <SearchIcon />
               </InputAdornment>
             }
+            color="color.default"
           />
         </InputContainer>
         <IconContainer sx={{ display: { xs: "none", sm: "flex" } }}>
